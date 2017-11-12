@@ -36,6 +36,12 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'jquery-rails' # Add this line if you use Rails 5.1
+gem "breadcrumbs_on_rails"
+
+gem 'figaro'
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

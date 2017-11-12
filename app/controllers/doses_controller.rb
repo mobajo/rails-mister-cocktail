@@ -1,7 +1,10 @@
 class DosesController < ApplicationController
+  add_breadcrumb "Home", :root_path
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
+    add_breadcrumb "#{@cocktail.name}", @cocktail
+    add_breadcrumb "Add ingredient", :new_cocktail_dose_path
   end
 
   def create

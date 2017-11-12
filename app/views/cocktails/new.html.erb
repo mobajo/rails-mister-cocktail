@@ -1,7 +1,15 @@
-<div class="container">
-  <h2>Add a new cocktail</h2>
-  <%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "Add cocktail", class: "btn btn-primary" %>
-<% end %>
+<div class="row">
+  <div class="col-sm-offset-2 col-xs-5">
+    <ol class="list-inline" id="breadcrumb">
+      <%= render_breadcrumbs :tag => :li, :separator => "<i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i>" %>
+    </ol>
+    <h2>Add a new cocktail</h2>
+    <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :attachinary %>
+    <%= f.submit "Add cocktail", class: "btn btn-danger" %>
+    <% end %>
+    
+
+  </div>
 </div>

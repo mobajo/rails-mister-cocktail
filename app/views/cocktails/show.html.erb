@@ -1,12 +1,30 @@
-<div class="container">
-  <h2><%= @cocktail.name %></h2>
-  <h3>Ingredients</h3>
-  <ul class="list-unstyled">
-    <% @cocktail.doses.each do |dose| %>
-    <li>
-      <p><%= dose.description %> <%= dose.ingredient.name %></p>
-    </li>
-    <% end %>
-  </ul>
-   <%= link_to "Add dose to recipe", new_cocktail_dose_path(@cocktail) %>
-</div>
+  <div class="row fade-in">
+    <div class="col-sm-offset-2 col-xs-4">
+      <ol class="list-inline" id="breadcrumb">
+        <%= render_breadcrumbs :tag => :li, :separator => "<i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i>" %>
+      </ol>
+      <h1><%= @cocktail.name %></h1>
+      
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-sm-offset-2 col-xs-4 fade-in">
+      <h3>Ingredients</h3>
+      <ul class="list-unstyled">
+        <% @cocktail.doses.each do |dose| %>
+        <li>
+          <p><%= dose.description %> <%= dose.ingredient.name %></p>
+        </li>
+        <% end %>
+      </ul>
+      <%= link_to new_cocktail_dose_path(@cocktail) do %>
+      <p><i class="fa fa-plus-circle" aria-hidden="true"></i> Add ingredient</p>
+      <% end %>
+    </div>
+    
+    <div class="col-xs-4 fade-in">
+      <%= cl_image_tag @cocktail.photo.path, height: 300, crop: :fit %>
+    </div>
+  </div>
+
